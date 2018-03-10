@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SSH Client Guide :  The Config File</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <link rel="shortcut icon" href="http://rjulian.net/favicon.ico" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+          <div class="site">
+            <img src="/images/signaltonoise.jpg" style="display: block;margin: -40px auto 10px auto;/*!  */">
+            <div class="header">
+              <h1 class="title"><a href="/">Richard Julian</a></h1>
+              <a class="extra" href="/">home</a>
+              <h1 class="title1">richard [at] rjulian.net</h1>
+            </div>
+
+                <h2>SSH Client Guide :  The Config File</h2>
+<p class="meta">27 Jul 2014</p>
+
+<div class="post">
+<p>Now that we know all of these cool client commands , let us make our lives so much easier by setting up a client config file so we don’t have to type in all of those nasty options.</p>
+
+<p><strong>SIMPLE HOST CONFIG</strong></p>
+
+<p>Regularly sshing to a machine? You likely want an ssh config file. This can be stored in <em>/etc/ssh/ssh_config</em>  (universal) or <em>~/.ssh/config </em>(local user).</p>
+
+<p>Let’s say you regularly log in to a remote server with a nonstandard port (29503) and using a public key.</p>
+
+<p><strong>Host</strong> webserver</p>
+
+<p style="padding-left: 30px;">
+  <strong>HostName </strong>web.server.com
+</p>
+
+<p style="padding-left: 30px;">
+  <strong>User </strong>username
+</p>
+
+<p style="padding-left: 30px;">
+  <strong>Port </strong>29503
+</p>
+
+<p style="padding-left: 30px;">
+  <strong>IdentityFile </strong>~/.ssh/key_file
+</p>
+
+<p>You would now ssh with those options by typing <strong>ssh webserver</strong> . This is equivalent to <strong>ssh **</strong>-p 29503 -i ~/.ssh/key_file username@web.server.com**. Even in simple configurations, having a config file can save you from a fair bit of typing, if you’ll be regularly connecting.</p>
+
+<p><strong>DEFAULT HOST CONFIGS</strong></p>
+
+<p>SSH config files also can set default options using the asterisk as a wildcard character:</p>
+
+<p><strong>Host </strong></p>
+
+<p style="padding-left: 30px;">
+  <strong>Port </strong>22
+</p>
+
+<p style="padding-left: 30px;">
+  <strong>User </strong>richard
+</p>
+
+<p style="padding-left: 30px;">
+  <strong>ForwardX11Trusted </strong>yes
+</p>
+
+<p>This would allow us to put the default port for all ssh connections at 22, username richard, and allow X11 forwarding. These can be overwritten on the command line (with explicit declaration) or by further entries in your config file.</p>
+
+<p> </p>
+
+<p><strong>Check out all of the config file options to customize and save time with your ssh client at the <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&amp;sec=5">ssh_config manpage</a>!</strong></p>
+
+<p> </p>
+
+
+</div>
+
+
+            <div class="footer">
+              <div class="contact">
+                <p>
+                  Richard Julian<br />
+                  richard [at] rjulian.net
+                </p>
+              </div>
+             </div>
+          </div>
+        </div> <!-- /container -->
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<p><strong>THE QUICK AND DIRTY</strong></p>
+
+<p>So, you’re working headless on the Raspberry Pi, Beaglebone Black, or just a machine which relies on wireless connection. Theoretically, you’re without an internet connection and therefore you don’t have access to easy tools like <strong>NetworkManager</strong> or <strong>wicd</strong>. <span style="text-decoration: underline;">As root/sudo</span>, this is what you do:</p>
+
+<p>**THE SETUP<br />
+**</p>
+
+<p>In order to connect, one needs the very common <strong>wpasupplicant</strong> package installed. In many distros, this is installed by default.</p>
+
+<p>Next up, it’s important to <span style="text-decoration: underline;">know your interfaces<strong>.</strong></span> Use <strong>ifcon</strong><strong>fig</strong> <strong>-a</strong> to list all interfaces (and identify your wireless interface name). Often, it is wlan0 or wlo0. Make sure the interface is up by running **ifconfig wlan0 up **(replace wlan0 with your wireless interface name).</p>
+
+<p>Now, let’s create a config file to be used by wpa_supplicant. There’s a nifty command for generating this in the form of **wpa_passphrase [SSID] [password] &gt; /etc/wpa.conf **where ssid is the name of the network, note: don’t enclose them in quotation marks.</p>
+
+<p>**CONNECTING **</p>
+
+<p>Now the fun part. Using the recently created config file, we’re going to connect to the network and then request an IP address from DHCP.</p>
+
+<p>The command to connect is: <strong>wpa_supplicant -iwlan0 -Dwext -c/etc/wpa.conf</strong> . Once it authenticates successfully, in a different terminal, we request a new IP address by first releasing previous leases and then asking for a new lease: <strong>dhclient -r &amp;&amp; dhclient wlan0</strong></p>
+
+<p>Granted you tailor this to your own interfaces and your device has correct drivers, you should be connected to the network. You can check by running <strong>ifconfig</strong> and seeing if the wireless interface has an IP address.</p>
+
+<p><strong>EXTRA HELP</strong></p>
+
+<p>So, that’s a very simple example. What if you don’t know the network ssid? Use <strong>wpa_cli</strong> to scan for network info (read the manpage). Instead of using the wext driver (which is a generic driver provided by wpa_supplicant), you could select a driver more suited to your wireless card. Troubleshoot effectively by <span style="text-decoration: underline;">checking the logs</span>. In Debian-based distros, the log for wifi is often <strong>/var/log/daemon.log</strong>. Don’t want to waste an entire terminal on running wpa_supplicant? In addition to the many options, also give it <strong>-B</strong> so that it runs in the background.</p>
+
+<p>And remember, search engines are your friends for troubleshooting wireless problems.</p>

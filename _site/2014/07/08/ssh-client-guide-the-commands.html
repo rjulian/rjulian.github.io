@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SSH Client Guide : The Commands</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <link rel="shortcut icon" href="http://rjulian.net/favicon.ico" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+          <div class="site">
+            <img src="/images/signaltonoise.jpg" style="display: block;margin: -40px auto 10px auto;/*!  */">
+            <div class="header">
+              <h1 class="title"><a href="/">Richard Julian</a></h1>
+              <a class="extra" href="/">home</a>
+              <h1 class="title1">richard [at] rjulian.net</h1>
+            </div>
+
+                <h2>SSH Client Guide : The Commands</h2>
+<p class="meta">08 Jul 2014</p>
+
+<div class="post">
+<p><strong>SECURE SHELL</strong></p>
+
+<p><strong>ssh</strong> is a tool that almost every Linux user will come across when working on multiple systems. <a href="http://www.openssh.com" title="Open SSH">OpenSSH</a> (developed by OpenBSD) is rather simple to use for the purpose of remote login, but there’s a wealth of options and features that can make ssh do so much more.</p>
+
+<p><strong>THE BASIC COMMAND</strong></p>
+
+<p>SSH is usually invoked as follows: <strong>ssh user@remote_machine</strong>. An example would be <strong>ssh richard@rjulian.net </strong>or **ssh user@198.187.31.129 **; You’re prompted to enter a password, guess correctly and you’re in! Simple as that.</p>
+
+<p><strong>THE BASIC OPTIONS</strong></p>
+
+<p><strong>-p  <em>port</em> </strong>:: to specify a port other than standard 22. e.g. <strong>ssh -p 6593 richard@198.178.30.195</strong></p>
+
+<p><em>*-i *keyfile</em> **:: to specify a public key for key based authentication</p>
+
+<p><strong>-e <em>character</em> **:: to specify an escape character (~ is default); escape character + ‘.’ will close connection. **e.g. ssh -e @ root@rjulian.net</strong></p>
+
+<p><strong>-o **</strong><em>option **</em>:: to specify a unique config option not in the config file, for this session only. **e.g. ssh -o ‘LogLevel INFO’ admin@192.168.1.1 **</p>
+
+<p><strong>-X </strong>:: Enable X11 Forwarding (if remote machine allows in their sshd_config), you can now open x applications from the command line that are running on the remote machine, but appear on your local machine.</p>
+
+<p><strong>PORT FORWARDING WITH SSH</strong></p>
+
+<p><strong>-D</strong> <em>*[optional</em>bind<em>address:]</em>port ***:: Dynamic port forwarding with a SOCKS5 Proxy. This is useful when you want to browse securely out of the house. Once the command is run, simply change browser settings to use a SOCKS proxy on localhost with whatever port you decide. Add the -N command to not execute a remote command (essentially: set up the forwarding only).  **e.g. ssh -D 8080 user@homeserver.com -N **</p>
+
+<p><strong>-L **</strong><em>clientport</em><strong>**:<em>hostname</em>:<em>hostport</em> </strong>:: Local port forwarding between a client. Forward the host port from the host to your local port. For example, to access a web server from a remote machine on your local machine (say, you wanted to access a work project from home), you would do: <strong>ssh username@workmachine.net -L 80:</strong>**workmachine.net:80 -N **</p>
+
+<p><strong>-R <em>remoteport</em>:<em>localhost</em>:<em>localport</em></strong>:: Reverse SSH tunneling with a client. Forward your local port to the remote server. With the same example, we want to give access to my local web server to one of my remote machines (they can connect to it by connecting to localhost:8080 with this setup) : <strong>ssh username@workmachine.net -R 8080:localhost:80</strong><strong> </strong></p>
+
+<p><strong>REFERENCE</strong></p>
+
+<p>There’s definitely more to SSH than meets the eye. There’s also IP forwarding with the <strong>-w</strong> option by creating tun interfaces (a future post, maybe).</p>
+
+<p>Learn more at the <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ssh&#038;sektion=1">ssh(1)</a> man page and of course, <a href="http://openssh.com">OpenSSH.com</a></p>
+
+<p> </p>
+
+
+</div>
+
+
+            <div class="footer">
+              <div class="contact">
+                <p>
+                  Richard Julian<br />
+                  richard [at] rjulian.net
+                </p>
+              </div>
+             </div>
+          </div>
+        </div> <!-- /container -->
+
+    </body>
+</html>

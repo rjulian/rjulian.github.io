@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Raspberry Pi Project : Motion Sensor Fortune Teller</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <link rel="shortcut icon" href="http://rjulian.net/favicon.ico" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="container">
+          <div class="site">
+            <img src="/images/signaltonoise.jpg" style="display: block;margin: -40px auto 10px auto;/*!  */">
+            <div class="header">
+              <h1 class="title"><a href="/">Richard Julian</a></h1>
+              <a class="extra" href="/">home</a>
+              <h1 class="title1">richard [at] rjulian.net</h1>
+            </div>
+
+                <h2>Raspberry Pi Project : Motion Sensor Fortune Teller</h2>
+<p class="meta">26 Aug 2014</p>
+
+<div class="post">
+<p><img src="/images/raspberry_pi_talker.jpg" alt="Model" /></p>
+
+<p>Want a unique, possibly creepy little feature for your next dinner party? Install a Raspberry Pi powered fortune teller robot (complete with mannequin head!) in your bathroom! It’s a simple project that involves sensors, text to speech programs, and a fair bit of fun. There’s nothing like having your guests come out wondering why the mannequin head in the bathroom just told them “Don’t go surfing in South Dakota for a while.”</p>
+
+<p><strong>PARTS</strong></p>
+
+<p>Required are the following parts:</p>
+
+<ul>
+  <li>Raspberry Pi</li>
+  <li>Solderless Breadboard</li>
+  <li>Wires (six needed, all Male to Female)</li>
+  <li>Passive Infrared (PIR) Sensor Module (Buy from <a href="https://www.adafruit.com/products/189">Adafruit</a> or quite cheaper, from <a href="http://www.ebay.com/sch/i.html?_from=R40&amp;_sacat=0&amp;_nkw=PIR+sensor+module">ebay</a>)</li>
+  <li>Speakers</li>
+</ul>
+
+<p>Optional parts include:</p>
+
+<ul>
+  <li>A USB hub (to power multiple things, e.g. speakers)</li>
+  <li>Wireless dongle (for remote control, so you can scare your guests further by having it say their names)</li>
+  <li>A creepy mannequin head</li>
+</ul>
+
+<p><strong>THE PROCESS</strong></p>
+
+<p><strong>1. Set up the Pi</strong></p>
+
+<p>Install Raspbian : numerous tutorials exist for how to do this, Raspberry Pi has documentation <a href="http://www.raspberrypi.org/help/noobs-setup/">here</a>. Personally, I just have the latest Raspbian img and use the dd command to load it onto the SD card.</p>
+
+<p><strong>2. Set up the PIR sensor</strong></p>
+
+<p>For the actual electronics part of this hack, there also exists quite a few tutorials out there. The best explanation for the hardware process was from a <a href="http://dataissexy.wordpress.com/2013/06/29/raspberry-pi-pir-motion-detection-and-alerting-to-sms-raspberrypi-sms-sensors/">blog post on DataIsSexy</a>. Follow this exactly and you’re in business.</p>
+
+<p><strong>3. Set up the software</strong></p>
+
+<p>And now the fun part of putting it all together. To do this, you can find an awesome write up on using python and the GPIO library for the PIR <a href="http://www.raspberrypi-spy.co.uk/2013/01/cheap-pir-sensors-and-the-raspberry-pi-part-1/">at Raspberry Pi Spy. </a>  This should be everything you need to get going with using a PIR to trigger an event.</p>
+
+<p>To get the fortune telling part, you’ll need to install <strong>fortune</strong> and <strong>festival</strong> by typing the command <strong>sudo apt-get install fortune festival </strong>.</p>
+
+<p>Festival’s text to speech default install is, how can we say, rough. I’d recommend speeding it down and selecting one of the more natural voice packages.</p>
+
+<p>Fortune can also be hacked to your liking. There’re a number of data files that you can install with fortune giving you seemingly endless quotes to be spoken. I personally enjoyed having it be 50% literary quotes 50% fortunes (the nasty fortunes collection sounds even more fun). The command to do this is <strong>fortune 50% literature 50% fortunes</strong> .</p>
+
+<p>Now, we just plug this system call into our python script for simplicity (something tells me python has a library to do this as well).</p>
+
+<p>The full code, condensed without comments is:</p>
+
+<pre><code>import RPi.GPIO as GPIO
+import time
+import os
+import datetime
+GPIO.setmode(GPIO.BCM)
+GPIO_PIR = 7
+GPIO.setup(GPIO_PIR,GPIO.IN)
+Current_State = 0
+Previous_State = 0
+try:
+    print "Waiting for PIR to settle ..."
+    while GPIO.input(GPIO_PIR)==1:
+        Current_State = 0
+    print " Ready "
+    while True :
+        Current_State = GPIO.input(GPIO_PIR)
+        if Current_State==1 and Previous_State==0:
+            print " Motion detected!"
+            print datetime.datetime.now()
+            os.system("/usr/games/fortune 50% literature 50% fortunes | tee -a fortunes | /usr/bin/festival --tts")
+            time.sleep(90)
+            Previous_State=1
+        elif Current_State==0 and Previous_State==1:
+            print " Ready"
+            Previous_State=0
+        time.sleep(0.01)
+except KeyboardInterrupt:
+    print " Quit"
+    GPIO.cleanup()
+</code></pre>
+
+<p>Should be pretty apparent what the command does. The only thing I haven’t mentioned is the <strong>tee -a fortunes</strong> command. It creates a file (named fortunes) with the text info appended every time the command is called, it’s a way of logging quotes said (in case someone didn’t understand it).</p>
+
+<p><strong>SET IT UP</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Now just plug it in and set it  and forget it! It’s a fun and easy project. And you could create a simple way of having it say custom commands over an ssh connection (requires wireless dongle and ssh server running) and the command **echo “Hello There!”</td>
+      <td>fortune –tts**</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+            <div class="footer">
+              <div class="contact">
+                <p>
+                  Richard Julian<br />
+                  richard [at] rjulian.net
+                </p>
+              </div>
+             </div>
+          </div>
+        </div> <!-- /container -->
+
+    </body>
+</html>
