@@ -29,7 +29,7 @@ url: "https://rjulian.net" # the base hostname & protocol for your site, e.g. ht
 github_username:  rjulian
 
 # Build settings
-theme: plainwhite
+remote_theme: thelehhman/plainwhite-jekyll
 plugins:
   - jekyll-feed
 
