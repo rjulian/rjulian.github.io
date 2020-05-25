@@ -2,6 +2,7 @@
 layout: post
 description: "A fun side project to compete for the Sci Fi design contest in Hackaday"
 title: "Deep Thought: Hackaday Side Project"
+categories: hardware
 ---
 <img src="/images/deep_thought.jpeg" alt="Deep Thought" style="width: 450px;display: block;margin: 0 auto;">
 

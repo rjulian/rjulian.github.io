@@ -2,6 +2,7 @@
 title: 'Event: Railsbridge Sacramento 2015'
 author: Richard Julian
 layout: post
+categories: community
 ---
 
 ![Group Photo courtesy of Ed Gibbs](/images/railsbridge_sacramento.jpg)

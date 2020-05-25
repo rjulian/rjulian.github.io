@@ -2,6 +2,7 @@
 layout: post
 description: "Slides from Tinc VPN Speech given at Sacramento Linux Users Group on January 26th, 2017"
 title: "Speech: Tinc VPN in a Makerspace"
+categories: networking tools
 ---
 I gave a quick little speech at the [Sacramento Linux Users Group](http://saclug.org) about how I use [tinc-vpn](http://www.tinc-vpn.org) in our makerspace.
 

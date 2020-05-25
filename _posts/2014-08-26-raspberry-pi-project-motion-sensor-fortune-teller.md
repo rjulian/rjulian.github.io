@@ -2,6 +2,7 @@
 title: 'Raspberry Pi Project : Motion Sensor Fortune Teller'
 author: Richard Julian
 layout: post
+categories: hardware
 ---
 
 ![Model](/images/raspberry_pi_talker.jpg)

@@ -2,6 +2,7 @@
 layout: post
 description: "Rundown for installing Wireshark from source with GeoIP enabled."
 title: "Installing Wireshark from Source with GeoIP Enabled"
+categories: tools protocols
 ---
 Perhaps I was missing something in the documentation, but for the life of me, I wasn't able to find a guide on building Wireshark from source with GeoIP lookup enabled. Wireshark has [great documentation on using GeoIP](https://wiki.wireshark.org/HowToUseGeoIP), but the process of getting a copy of Wireshark with 'GeoIP' enabled isn't spelled out at all. I assume this could be because certain packaged versions of it come with GeoIP enabled by default.
 

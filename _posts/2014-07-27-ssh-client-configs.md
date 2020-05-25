@@ -2,6 +2,7 @@
 title: 'SSH Client Guide :  The Config File'
 author: Richard Julian
 layout: post
+categories: cli
 ---
 Now that we know all of these cool client commands , let us make our lives so much easier by setting up a client config file so we don&#8217;t have to type in all of those nasty options.
 

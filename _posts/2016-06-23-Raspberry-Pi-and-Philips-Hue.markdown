@@ -2,6 +2,7 @@
 layout: post
 description: "We used the Raspberry Pi Sense HAT's joystick to interact with the REST API of the Philips Hue to control hue and brightness of the lights in our space."
 title: "Project: Changing Smart Lights with a Raspberry Pi"
+categories: hardware
 ---
 <img src="http://makerhq.org/images/light_switcher.gif" class="image" style="margin: 0 auto 10px; display: block;">
 <span id="hq">W</span>e used the [Raspberry Pi Sense HAT's](https://www.raspberrypi.org/products/sense-hat/) joystick to interact with the REST API of the [Philips Hue](http://www2.meethue.com/en-us/) to control hue and brightness of the lights in our space.
@@ -10,7 +11,7 @@ In one of our [recent meetups](http://www.meetup.com/Sacramento-Open-Hardware/ev
 
 Beyond having a really cool 8x8 LED Matrix and a myriad of sensors, you are also given a joystick input on the device. To me, one of the quickest and most impactful demo applications is showing that the joystick input on the Sense HAT can be used to control your smart home devices. In our case, we wanted to connect and work with a [Philips Hue](http://www2.meethue.com/en-us/) internet connected lightbulb.
 
-<img src="http://makerhq.org/images/pi_hue.jpg" class="image" style="margin: auto; width: 50%; display: block;">
+<img src="http://rjulian.net/images/pi_hue.jpg" class="image" style="margin: auto; width: 50%; display: block;">
 
 To replicate this project:
 

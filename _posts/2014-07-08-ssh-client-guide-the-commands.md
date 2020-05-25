@@ -2,6 +2,7 @@
 title: 'SSH Client Guide : The Commands'
 author: Richard Julian
 layout: post
+categories: cli
 ---
 **SECURE SHELL**
 

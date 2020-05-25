@@ -2,6 +2,7 @@
 layout: post
 description: "Slides from Network Analysis Speech given at MakerHQ on July 19th, 2016"
 title: "Speech: Network Analysis for IoT"
+categories: protocols tools
 ---
 These are the notes and brief presentation from an IoT Network Analysis meetup at MakerHQ.
 

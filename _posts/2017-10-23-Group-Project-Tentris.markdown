@@ -2,6 +2,7 @@
 layout: post
 description: "Our space got together to create a fun, LED-focused project"
 title: "Tentris: Group Makerspace Project"
+categories: community
 ---
 <img src="/images/tentris.jpeg" alt="Tentris" style="width: 450px;display: block;margin: 0 auto;">
 
