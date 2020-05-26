@@ -1,6 +1,6 @@
 ---
 layout: post
-description: "An introduction to AWS Landing Zone
+description: "An introduction to AWS Landing Zone"
 title: "Touching Down with AWS Landing Zone"
 categories: cloud security
 ---
