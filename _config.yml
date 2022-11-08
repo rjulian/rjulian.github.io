@@ -30,6 +30,7 @@ github_username:  rjulian
 
 # Build settings
 remote_theme: samarsault/plainwhite-jekyll
+#theme: plainwhite
 plugins:
   - jekyll-feed
   - jekyll-gist
@@ -43,6 +44,7 @@ plainwhite:
     Cloud.
     Sometimes transit.
   date_format: "%b %-d, %Y"
+  portfolio_image:  "assets/portfolio.png"
 
   social_links:
     github: rjulian
