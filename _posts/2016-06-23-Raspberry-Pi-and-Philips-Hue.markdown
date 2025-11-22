@@ -4,6 +4,7 @@ description: "We used the Raspberry Pi Sense HAT's joystick to interact with the
 title: "Project: Changing Smart Lights with a Raspberry Pi"
 categories: hardware
 ---
+
 <img src="http://makerhq.org/images/light_switcher.gif" class="image" style="margin: 0 auto 10px; display: block;">
 <span id="hq">W</span>e used the [Raspberry Pi Sense HAT's](https://www.raspberrypi.org/products/sense-hat/) joystick to interact with the REST API of the [Philips Hue](http://www2.meethue.com/en-us/) to control hue and brightness of the lights in our space.
 
@@ -27,4 +28,3 @@ To replicate this project:
 You should be able to start using the joystick to change the Hue by moving to the left or right and change the brightness by moving the joystick up and down.
 
 [Check out the code on github!](https://gist.github.com/rjulian/b92d43f8b6378c57dd96d71eaf064438#file-makerhq_sense_hue-py)
-

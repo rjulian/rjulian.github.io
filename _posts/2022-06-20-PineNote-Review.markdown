@@ -4,6 +4,7 @@ description: "My initial review of the PineNote device."
 title: "Pine64 PineNote: Initial Review"
 categories: hardware linux
 ---
+
 ![My PineNote](/assets/pinenote.jpg)
 I've now owned my PineNote for two weeks and figured it'd be a decent time as ever to share initial thoughts and general views of the project. The TL;DR is that the product category is cool, but the PineNote project is still too early for end users.
 
@@ -25,4 +26,4 @@ Where things get weird is the "Community Driven" part of their slogan. From a ge
 
 Are we building towards a really solid end-user e-reader/writer product? Are we building towards a versatile product that can be a full Linux tablet? So far, it's unclear. The community doesn't seem to have much spirit either, with no one really identified as a leader.
 
-I'm cautiously optimistic for the PineNote. Mostly, because I firmly believe in this product category for people who're looking for more distraction-free tech that is easy on the eyes. I hope it works our for Pine64 and if not, I really hope the Remarkable or other competitors continue innovating in the space. 
+I'm cautiously optimistic for the PineNote. Mostly, because I firmly believe in this product category for people who're looking for more distraction-free tech that is easy on the eyes. I hope it works our for Pine64 and if not, I really hope the Remarkable or other competitors continue innovating in the space.

@@ -1,9 +1,10 @@
 ---
-title: 'SSH Client Guide :  The Config File'
+title: "SSH Client Guide :  The Config File"
 author: Richard Julian
 layout: post
 categories: cli
 ---
+
 Now that we know all of these cool client commands , let us make our lives so much easier by setting up a client config file so we don&#8217;t have to type in all of those nasty options.
 
 **SIMPLE HOST CONFIG**
@@ -30,7 +31,7 @@ Let&#8217;s say you regularly log in to a remote server with a nonstandard port 
   <strong>IdentityFile </strong>~/.ssh/key_file
 </p>
 
-You would now ssh with those options by typing **ssh webserver** . This is equivalent to **ssh ****-p 29503 -i ~/.ssh/key_file username@web.server.com**. Even in simple configurations, having a config file can save you from a fair bit of typing, if you&#8217;ll be regularly connecting.
+You would now ssh with those options by typing **ssh webserver** . This is equivalent to **ssh \*\***-p 29503 -i ~/.ssh/key_file username@web.server.com**. Even in simple configurations, having a config file can save you from a fair bit of typing, if you&#8217;ll be regularly connecting.
 
 **DEFAULT HOST CONFIGS**
 
@@ -58,4 +59,4 @@ This would allow us to put the default port for all ssh connections at 22, usern
 
 &nbsp;
 
- [2]: http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&sec=5
+[2]: http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&sec=5

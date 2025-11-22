@@ -1,5 +1,5 @@
 ---
-title: 'Raspberry Pi Project : Motion Sensor Fortune Teller'
+title: "Raspberry Pi Project : Motion Sensor Fortune Teller"
 author: Richard Julian
 layout: post
 categories: hardware
@@ -7,24 +7,23 @@ categories: hardware
 
 ![Model](/images/raspberry_pi_talker.jpg)
 
-
 Want a unique, possibly creepy little feature for your next dinner party? Install a Raspberry Pi powered fortune teller robot (complete with mannequin head!) in your bathroom! It&#8217;s a simple project that involves sensors, text to speech programs, and a fair bit of fun. There&#8217;s nothing like having your guests come out wondering why the mannequin head in the bathroom just told them &#8220;Don&#8217;t go surfing in South Dakota for a while.&#8221;
 
 **PARTS**
 
 Required are the following parts:
 
-* Raspberry Pi
-* Solderless Breadboard
-* Wires (six needed, all Male to Female)
-* Passive Infrared (PIR) Sensor Module (Buy from [Adafruit][2] or quite cheaper, from [ebay][3])
-* Speakers
+- Raspberry Pi
+- Solderless Breadboard
+- Wires (six needed, all Male to Female)
+- Passive Infrared (PIR) Sensor Module (Buy from [Adafruit][2] or quite cheaper, from [ebay][3])
+- Speakers
 
 Optional parts include:
 
-* A USB hub (to power multiple things, e.g. speakers)
-* Wireless dongle (for remote control, so you can scare your guests further by having it say their names)
-* A creepy mannequin head
+- A USB hub (to power multiple things, e.g. speakers)
+- Wireless dongle (for remote control, so you can scare your guests further by having it say their names)
+- A creepy mannequin head
 
 **THE PROCESS**
 
@@ -50,7 +49,6 @@ Now, we just plug this system call into our python script for simplicity (someth
 
 The full code, condensed without comments is:
 
-    
     import RPi.GPIO as GPIO
     import time
     import os
@@ -80,7 +78,6 @@ The full code, condensed without comments is:
     except KeyboardInterrupt:
         print " Quit"
         GPIO.cleanup()
-    
 
 Should be pretty apparent what the command does. The only thing I haven&#8217;t mentioned is the **tee -a fortunes** command. It creates a file (named fortunes) with the text info appended every time the command is called, it&#8217;s a way of logging quotes said (in case someone didn&#8217;t understand it).
 
@@ -88,9 +85,9 @@ Should be pretty apparent what the command does. The only thing I haven&#8217;t 
 
 Now just plug it in and set it  and forget it! It&#8217;s a fun and easy project. And you could create a simple way of having it say custom commands over an ssh connection (requires wireless dongle and ssh server running) and the command **echo &#8220;Hello There!&#8221; | fortune &#8211;tts**
 
- [1]: http://rjulian.net/wp-content/uploads/2014/08/raspberry_pi_talker.jpg
- [2]: https://www.adafruit.com/products/189
- [3]: http://www.ebay.com/sch/i.html?_from=R40&_sacat=0&_nkw=PIR+sensor+module
- [4]: http://www.raspberrypi.org/help/noobs-setup/
- [5]: http://dataissexy.wordpress.com/2013/06/29/raspberry-pi-pir-motion-detection-and-alerting-to-sms-raspberrypi-sms-sensors/
- [6]: http://www.raspberrypi-spy.co.uk/2013/01/cheap-pir-sensors-and-the-raspberry-pi-part-1/
+[1]: http://rjulian.net/wp-content/uploads/2014/08/raspberry_pi_talker.jpg
+[2]: https://www.adafruit.com/products/189
+[3]: http://www.ebay.com/sch/i.html?_from=R40&_sacat=0&_nkw=PIR+sensor+module
+[4]: http://www.raspberrypi.org/help/noobs-setup/
+[5]: http://dataissexy.wordpress.com/2013/06/29/raspberry-pi-pir-motion-detection-and-alerting-to-sms-raspberrypi-sms-sensors/
+[6]: http://www.raspberrypi-spy.co.uk/2013/01/cheap-pir-sensors-and-the-raspberry-pi-part-1/

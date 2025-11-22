@@ -4,9 +4,10 @@ description: "Event driven architecture inside of AWS."
 title: "Three Ways: Event Driven Architecture"
 categories: cloud monitoring
 ---
-*This blog post was co-written with friend and coworker, [Max Anderson](https://mcbanderson.com/).*
 
-As the complexity and scale of our AWS use cases grow, so too does the complexity of  monitoring and managing our AWS accounts. Whether these concerns revolve around maintaining corporate compliance objectives, hardening accounts against attackers, or simply controlling cost, the enforcement mechanisms can involve some serious logic. With the advent of AWS Cloudwatch Events we can leverage a new pattern to easily and cost effectively satisfy these requirements: event driven architecture. The goal of this post is to provide an overview of what event driven architecture is, pose three realistic requirements for an AWS environment, and demonstrate the corresponding event driven solutions to satisfy those requirements.
+_This blog post was co-written with friend and coworker, [Max Anderson](https://mcbanderson.com/)._
+
+As the complexity and scale of our AWS use cases grow, so too does the complexity of monitoring and managing our AWS accounts. Whether these concerns revolve around maintaining corporate compliance objectives, hardening accounts against attackers, or simply controlling cost, the enforcement mechanisms can involve some serious logic. With the advent of AWS Cloudwatch Events we can leverage a new pattern to easily and cost effectively satisfy these requirements: event driven architecture. The goal of this post is to provide an overview of what event driven architecture is, pose three realistic requirements for an AWS environment, and demonstrate the corresponding event driven solutions to satisfy those requirements.
 
 # What is Event Driven Architecture?
 
@@ -41,7 +42,6 @@ As background, let’s pretend we exist in an organization that has agreed that 
 {% gist 22089870bf7116187d39aae699ea21f6 %}
 
 To test out this solution, simply change the email address associated with the SNS topic, create the stack, confirm your SNS topic subscription (via the email you received when the stack was created), and then launch a VPC. In moments, you should get an email alerting you to the offending VPC. (Sometimes these emails get sent to spam, so check your spam folder if you don’t see them).
-
 
 # Way Two: Enforce S3 Bucket Encryption
 

@@ -9,12 +9,12 @@ Recently tasked with exploring the AWS Landing Zone managed solution, the follow
 
 # What is Landing Zone
 
-Essentially, AWS Landing zone is a semi-managed solution provided by AWS that creates an opinionated multi-account setup inside of an AWS Organization. As of this speech, the solution isn't public and is provided by AWS Proserve. While it's currently available via the web resources I've provided, those endpoints are not well advertised. 
+Essentially, AWS Landing zone is a semi-managed solution provided by AWS that creates an opinionated multi-account setup inside of an AWS Organization. As of this speech, the solution isn't public and is provided by AWS Proserve. While it's currently available via the web resources I've provided, those endpoints are not well advertised.
 
 # Multiple Account Structure
 
 AWS has long held that a multi account solution is the safest way to separate concerns in their cloud. There're a number of [great](https://www.youtube.com/watch?v=pqq39mZKQXU) [talks](https://www.youtube.com/watch?v=71fD8Oenwxc) on the subject of multiple account strategy in AWS that can speak volumes as to the "why" you would want to follow this pattern. Essentially, the separation of core cloud functionality in different AWS accounts allows better use of preventive controls and
-considerably better ability to assess least privilege access. 
+considerably better ability to assess least privilege access.
 
 The problem with this setup, however, was that it was painstaking to automate and manage. Before Landing Zone started aiding in that effort, most teams were faced with rolling their own account automation solution.
 
@@ -27,4 +27,4 @@ As of this version (1.1), Landing Zone can be extended, though not without a fai
 
 # Conclusion
 
-Without a doubt, AWS Landing Zone has a role to play in the greater account security space. As of now, it's a handy automation tool that I would absolutely imagine becomes a managed service within AWS. 
+Without a doubt, AWS Landing Zone has a role to play in the greater account security space. As of now, it's a handy automation tool that I would absolutely imagine becomes a managed service within AWS.

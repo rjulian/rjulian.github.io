@@ -1,5 +1,5 @@
 ---
-title: 'Event: Railsbridge Sacramento 2015'
+title: "Event: Railsbridge Sacramento 2015"
 author: Richard Julian
 layout: post
 categories: community

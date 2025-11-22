@@ -4,6 +4,7 @@ description: "Slides from Network Analysis Speech given at MakerHQ on July 19th,
 title: "Speech: Network Analysis for IoT"
 categories: protocols tools
 ---
+
 These are the notes and brief presentation from an IoT Network Analysis meetup at MakerHQ.
 
 For those in attendance, there was a hands on 'get up and running' guide to using Wireshark. We used our recent home-built Arduino MKR-1000 based IoT device as a demo for reading the raw MQTT packets going across the wire.
